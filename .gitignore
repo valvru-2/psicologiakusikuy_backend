@@ -1,0 +1,94 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# MacOS
+*.swp
+*.swo
+*.swn
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.idea/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+
+# .NET
+bin/
+obj/
+.vs/
+.vscode/
+
+# JavaScript / TypeScript
+/dist/
+/build/
+/coverage/
+/public/
+/*.map
+*.tsbuildinfo
+
+# Laravel (PHP)
+/vendor/
+/.env
+.env
+
+# Ruby
+*.gem
+*.rbc
+.bundle/
+config/database.yml
+config/secrets.yml
+log/
+tmp/
+
+# Android
+*.apk
+*.ap_
+*.dex
+*.class
+*.jar
+*.war
+build/
+local.properties
+.idea/
+
+# Xcode (iOS/MacOS)
+DerivedData/
+*.xcworkspace
+*.xcuserstate
+*.xcuserdatad
+Pods/
+
+# Unity
+[Ll]ibrary/
+[Ll]ocks/
+[Tt]emp/
+[Tt]argets/
+.DS_Store
+.env
+.env
