@@ -12,8 +12,19 @@ const app = express()
 app.use(express.json())
 
 //Habilita middleware para aceptar cors
+const allowedOrigins = [
+    'https:localhost:5173',
+    'https://wwww.psicologiakusikuy.com'
+]
+
 app.use(cors({
-  origin: 'http://localhost:5173', // solo tu frontend
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }, // solo tu frontend
   methods: ['GET', 'POST'],       // o lo que uses
   credentials: true               // solo si usás cookies o sesiones
 }))
