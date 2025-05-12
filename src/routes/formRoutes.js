@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post( '/contacto', async (req, res) => {
     if(req.body) console.log('Body recibido en /contacto', req.body)
-    const { nombre, email, descripcion } = req.body;
+    const { nombre, email, mensaje } = req.body;
     let hubspotWarning = null;
 
     try {
@@ -14,7 +14,7 @@ router.post( '/contacto', async (req, res) => {
                 properties: {
                     "email": email,
                     "firstname": nombre,
-                    "descripcion_de_form_de_contacto": descripcion
+                    "descripcion_de_form_de_contacto": mensaje
                 }
             }, {
                 headers: {
@@ -27,8 +27,6 @@ router.post( '/contacto', async (req, res) => {
         
         console.log('Enviado a Hubspot')
         
-        
-        res.status(200).json({ message: 'Formulario enviado a Hubspot' })
     } catch (e) {
         const status = e.response?.status;
         const data = e.response?.data;
@@ -47,7 +45,7 @@ router.post( '/contacto', async (req, res) => {
     
     
     try {
-        await enviarCorreo( nombre, email, descripcion )
+        await enviarCorreo( nombre, email, mensaje )
         console.log('Correo interno enviado con exito')
         
     } catch (e) {

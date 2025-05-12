@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer'
 import dotenv from 'dotenv';
 dotenv.config();
 
-const enviarCorreo = async( nombre, email, descripcion ) => {
+const enviarCorreo = async( nombre, email, mensaje ) => {
 
     const transportes = nodemailer.createTransport({
         host: 'mail.privateemail.com',
@@ -37,7 +37,7 @@ const enviarCorreo = async( nombre, email, descripcion ) => {
                     <p><strong>Nombre:</strong> ${nombre}</p>
                     <p><strong>Correo:</strong> ${email}</p>
                     <p><strong>Mensaje:</strong></p>
-                    <p style="background-color: #f1f1f1; padding: 15px; border-radius: 4px; color: #333;">${descripcion}</p>
+                    <p style="background-color: #f1f1f1; padding: 15px; border-radius: 4px; color: #333;">${mensaje}</p>
 
                     <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 20px 0;" />
 
